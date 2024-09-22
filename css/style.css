@@ -60,6 +60,7 @@ header {
 
 .header-links a {
   border-top: transparent 3px solid;
+  border-bottom: none;
   height: 100%;
   display: flex;
   align-items: center;
@@ -68,6 +69,7 @@ header {
 .header-links a:hover {
   color: var(--main-color);
   border-top: var(--main-color) 3px solid;
+  border-bottom: none;
 }
 
 /****** Nav ***********/
@@ -157,7 +159,7 @@ nav p {
 
 .filters button {
   padding: 0.7rem 1.2rem;
-  border: var(--main-bg-color) 3px solid;
+  border: var(--main-bg-color) 2px solid;
   border-radius: 30px;
   background-color: white;
   display: flex;
@@ -199,7 +201,6 @@ nav p {
   align-items: center;
   justify-content: center;
 }
-
 
 /****** Main container ***********/
 
@@ -447,6 +448,14 @@ footer {
         flex-direction: column;
     }
 
+    #search-mobile {
+      display: none;
+    }
+
+    #search-desktop {
+      display: inline;
+    }
+
     .hebergements {
         width: 100%;
     }
@@ -491,5 +500,91 @@ footer {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    /* ... */
+
+  .main-container {
+    padding: 0;
+    gap: 30px;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    flex-direction: column;
+    height: 115px;
+  }
+  
+  #header-logo {
+    height: 20px;
+    width: 60px;
+    flex-grow: 1;
+  }
+
+  .header-links {
+    display: flex;
+    height: 36px;
+    width: 100%;
+    gap: 0;
+  }
+  
+  .header-links a {
+    border-bottom: var(--main-bg-color) 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: none;
+    width: 50%;
+  }
+  
+  .header-links a:hover {
+    color: var(--main-color);
+    border-bottom: var(--main-color) 2px solid;
+    border-top: none;
+  }
+
+  /* Nav */
+
+  nav {
+    padding: 0 20px;
+  }
+
+  .search-area {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .search-area input {
+    flex-grow: 0.9;
+  }
+
+  #search-desktop {
+    display: none;
+  }
+
+  #search-mobile {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    display: inline;
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+    box-shadow: 1px 1px 4px 1px rgba(128, 128, 128, 0.3);
+  }
+
+  #search-mobile .fa-solid {
+    color: white;
+  }
+
+  .filters-buttons-container {
+    gap: 10px;
+    width: 100%;
+  }
+
+  .filters button {
+    font-size: 0.9rem;
+    justify-content: center;
+    width: 48%;
+  }
 }
